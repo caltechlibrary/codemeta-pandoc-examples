@@ -5,7 +5,7 @@ In this repository you see three examples of using Pandoc, Pandoc templates and 
 
 ## Generating a CITATION.cff
 
-The codemeta.json file can be use to generate a CITATION.cff file using the pandoc template [codemeta-cff.tmpl](codemeta-cff.tmpl).
+The codemeta.json file can be use to generate a CITATION.cff file using the Pandoc template [codemeta-cff.tmpl](codemeta-cff.tmpl).
 
 ~~~shell
     echo '' | pandoc -s --metadata title='Citation' \
@@ -17,7 +17,7 @@ The codemeta.json file can be use to generate a CITATION.cff file using the pand
 ## Generating an about page
 
 Like [CITATION.cff](CITATION.cff) we can generate a standard about page,
-[about.md](about.md) from our codemeta.json using the pandoc template [codemeta-about.tmpl](codemeta-about.tmpl).
+[about.md](about.md) from our codemeta.json using the Pandoc template [codemeta-about.tmpl](codemeta-about.tmpl).
 
 ~~~shell
     echo '' | pandoc -s --metadata title='About' \
