@@ -7,7 +7,7 @@
     "issueTracker": "https://github.com/caltechlibrary/curl-installer-sh/issues",
     "name": "curl-installer-sh",
     "version": "0.0.1",
-    "description": "This project includes generating a installer.sh from a codemeta.json file using Pandoc.",
+    "description": "This project shows generating an installer.sh from a codemeta.json file using Pandoc using GNU Make. It also includes examples of generating and about.md file and CITATION.cff.",
     "applicationCategory": "application installer",
     "developmentStatus": "concept",
     "funder": {
