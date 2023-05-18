@@ -1,13 +1,13 @@
 {
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
-    "license": "https://caltechlibrary.github.io/curl-installer-sh/LICENSE",
-    "codeRepository": "git+https://github.com/caltechlibrary/curl-installer-sh",
+    "license": "https://caltechlibrary.github.io/codemeta-pandoc-examples/LICENSE",
+    "codeRepository": "git+https://github.com/caltechlibrary/codemeta-pandoc-examples",
     "dateCreated": "2023-05-18",
-    "issueTracker": "https://github.com/caltechlibrary/curl-installer-sh/issues",
-    "name": "curl-installer-sh",
+    "issueTracker": "https://github.com/caltechlibrary/codemeta-pandoc-examples/issues",
+    "name": "codemeta-pandoc-examples",
     "version": "0.0.1",
-    "description": "This project shows generating an installer.sh from a codemeta.json file using Pandoc using GNU Make. It also includes examples of generating and about.md file and CITATION.cff.",
+    "description": "This repository describes how to generate a CITATION.cff, about.md and installer.sh from a codemeta.json file using Pandoc.",
     "applicationCategory": "application installer",
     "developmentStatus": "concept",
     "funder": {
@@ -20,10 +20,7 @@
         "templates"
     ],
     "programmingLanguage": [
-        "make",
-        "pandoc",
-        "bash",
-        "sh"
+        "pandoc templates"
     ],
     "operatingSystem": [
         "macOS",

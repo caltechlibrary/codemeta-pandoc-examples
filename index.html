@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>curl installer.sh example</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://caltechlibrary.github.io/css/site.css">
+</head>
+<body>
+<header>
+<a href="http://library.caltech.edu" title="link to Caltech Library Homepage"><img src="https://caltechlibrary.github.io/assets/liblogo.gif" alt="Caltech Library logo"></a>
+</header>
+<nav>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="index.html">README</a></li>
+    <li><a href="LICENSE">LICENSE</a></li>
+    <li><a href="about.html">About</a></li>
+	<li><a href="search.html">Project Search</a></li>
+    <li><a href="https://github.com/caltechlibrary/curl-installer-sh-example">GitHub</a></li>
+</ul>
+</nav>
+
+<section>
+<h1
+id="genrating-a-installer.sh-using-pandoc-and-pandoc-templates">Genrating
+a installer.sh using Pandoc and Pandoc templates</h1>
+<p>In this repository you see three examples of using Pandoc, Pandoc
+templates and codemeta.json to creater an <strong>installer.sh</strong>
+file, <strong>CITATION.cff</strong> and <a
+href="about.html">about.md</a> page.</p>
+<h2 id="generating-a-citation.cff">Generating a CITATION.cff</h2>
+<p>The codemeta.json file can be use to generate a CITATION.cff file
+using the pandoc template <a
+href="codemeta-cff.tmpl">codemeta-cff.tmpl</a>.</p>
+<pre class="shell"><code>    echo &#39;&#39; | pandoc -s --metadata title=&#39;Citation&#39; \
+                        --metadata-file codemeta.json \
+                        --template codemeta-cff.tmpl \
+                        &gt;CITATION.cff</code></pre>
+<h2 id="generating-an-about-page">Generating an about page</h2>
+<p>Like <a href="CITATION.cff">CITATION.cff</a> we can generate a
+standard about page, <a href="about.html">about.md</a> from our
+codemeta.json using the pandoc template <a
+href="codemeta-about.tmpl">codemeta-about.tmpl</a>.</p>
+<pre class="shell"><code>    echo &#39;&#39; | pandoc -s --metadata title=&#39;About&#39; \
+                        --metadata-file codemeta.json \
+                        --template codemeta-about.tmpl \
+                        &gt;about.md</code></pre>
+<h2 id="generating-an-installer.sh">Generating an installer.sh</h2>
+<p>The nice thing about the Pandoc approach is you can also use it as a
+shell script generator. Today (2023) many software tools[1] developers
+use have installation instructions like</p>
+<pre class="shell"><code>    curl https://caltechlibrary.github.io/datatools/installer.sh | sh</code></pre>
+<p>With a single POSIX shell installer script you easily install your
+tools on macOS and Linux.</p>
+<p>Once again the [codemeta.json] file provides much of the information
+needed to render our <strong>installer.sh</strong>. Our template, <a
+href="codemeta-installer.tmpl">codemeta-installer.tmpl</a> does make
+some specific assumptions</p>
+<ul>
+<li>You’ve installation files are in a zip archive</li>
+<li>There hosted under the GitHub in the releases directory for your
+repository</li>
+<li>The name of the zip file is in the form of
+<code>&lt;REPO-NAME&gt;-v&lt;VERSION&gt;-&lt;OS_NAME&gt;-&lt;ARCHITECTURE&gt;.zip</code></li>
+<li>The version number in the codemeta.json file does NOT have a leading
+‘v’</li>
+<li>curl is available on the machine where you want to install the
+software and it has a network connection</li>
+</ul>
+<dl>
+<dt>REPO-NAME</dt>
+<dd>
+This would be the name of your Git repository, e.g. datatools
+</dd>
+<dt>VERSION</dt>
+<dd>
+This would be the version number without the leading “v”, e.g. “0.0.1”
+</dd>
+<dt>OS_NAME</dt>
+<dd>
+This would be what is reported by the command <code>uname</code>
+</dd>
+<dt>MACHINE-TYPE</dt>
+<dd>
+This would be what is reported by the command <code>uname -m</code>
+</dd>
+</dl>
+<p>Rendering the <strong>installer.sh</strong> file can be done with the
+following Pandoc command.</p>
+<pre><code>echo &#39;&#39; | pandoc -s --metadata title=&#39;Installer&#39; \
+            --metadata-file codemeta.json \
+            --template installer.sh</code></pre>
+<p>If you host this installer script can then be uploaded to your
+website. The curl command would be of the form</p>
+<pre><code>    curl &lt;URL_TO_SITE&gt;/installer.sh | sh</code></pre>
+</section>
+
+<footer>
+<span>&copy; 2023 <a href="https://www.library.caltech.edu/copyright">Caltech Library</a></span>
+<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address>
+<span><a href="mailto:library@caltech.edu">Email Us</a></span>
+<span>Phone: <a href="tel:+1-626-395-3405">(626)395-3405</a></span>
+</footer>
+</body>
+</html>

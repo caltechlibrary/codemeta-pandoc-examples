@@ -5,7 +5,7 @@
 #
 PACKAGE="$name$"
 VERSION="$version$"
-RELEASE="https://github.com/caltechlibrary/$$PACKAGE/releases/tag/v$$VERSION"
+RELEASE="https://github.com/caltechlibrary/$$PACKAGE/releases/tag/$$VERSION"
 
 #
 # Get the name of this script.
@@ -19,15 +19,10 @@ OS_NAME="$$(uname -o)"
 MACHINE="$$(uname -m)"
 case "$$OS_NAME" in
    Darwin)
-   OS_NAME="macos"
+   OS_NAME="macOS"
    ;;
    "GNU/Linux")
-   OS_NAME="linux"
-   ;;
-esac
-case "$$MACHINE" in
-   x86_64)
-   MACHINE="amd64"
+   OS_NAME="GNU_linux"
    ;;
 esac
 ZIPFILE="$$PACKAGE-$$VERSION-$$OS_NAME-$$MACHINE.zip"
