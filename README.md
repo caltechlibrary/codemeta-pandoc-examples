@@ -1,7 +1,7 @@
 
-# Genrating a installer.sh using Pandoc and Pandoc templates
+# Codemeta + Pandoc Examples
 
-In this repository you see three examples of using Pandoc, Pandoc templates and codemeta.json to creater an **installer.sh** file, **CITATION.cff** and [about.md](about.md) page.
+In this repository you see three examples of using Pandoc, Pandoc templates and codemeta.json to create an [about page](about.md), a [CITATION.cff](CITATION.cff) and an [installer.sh](https://caltechlibrary.github.io/irdmtools/installer.sh) file.
 
 ## Generating a CITATION.cff
 
@@ -74,4 +74,7 @@ curl command would be of the form
 ~~~
     curl <URL_TO_SITE>/installer.sh | sh
 ~~~
+
+
+[1]: Examples Rust with [Rustup](https://rustup.rs/) and Haskell's [GHCup](https://www.haskell.org/ghcup/)
 
