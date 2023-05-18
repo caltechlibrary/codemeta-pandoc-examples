@@ -29,7 +29,7 @@ href="https://caltechlibrary.github.io/irdmtools/installer.sh">installer.sh</a>
 file.</p>
 <h2 id="generating-a-citation.cff">Generating a CITATION.cff</h2>
 <p>The codemeta.json file can be use to generate a CITATION.cff file
-using the pandoc template <a
+using the Pandoc template <a
 href="codemeta-cff.tmpl">codemeta-cff.tmpl</a>.</p>
 <pre class="shell"><code>    echo &#39;&#39; | pandoc -s --metadata title=&#39;Citation&#39; \
                         --metadata-file codemeta.json \
@@ -38,7 +38,7 @@ href="codemeta-cff.tmpl">codemeta-cff.tmpl</a>.</p>
 <h2 id="generating-an-about-page">Generating an about page</h2>
 <p>Like <a href="CITATION.cff">CITATION.cff</a> we can generate a
 standard about page, <a href="about.html">about.md</a> from our
-codemeta.json using the pandoc template <a
+codemeta.json using the Pandoc template <a
 href="codemeta-about.tmpl">codemeta-about.tmpl</a>.</p>
 <pre class="shell"><code>    echo &#39;&#39; | pandoc -s --metadata title=&#39;About&#39; \
                         --metadata-file codemeta.json \
