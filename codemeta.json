@@ -1,0 +1,54 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://caltechlibrary.github.io/curl-installer-sh/LICENSE",
+    "codeRepository": "git+https://github.com/caltechlibrary/curl-installer-sh",
+    "dateCreated": "2023-05-18",
+    "issueTracker": "https://github.com/caltechlibrary/curl-installer-sh/issues",
+    "name": "curl-installer-sh",
+    "version": "0.0.1",
+    "description": "This project includes generating a installer.sh from a codemeta.json file using Pandoc.",
+    "applicationCategory": "application installer",
+    "developmentStatus": "concept",
+    "funder": {
+        "@type": "Organization",
+        "name": "Caltech Library"
+    },
+    "keywords": [
+        "codemeta",
+        "pandoc",
+        "templates"
+    ],
+    "programmingLanguage": [
+        "make",
+        "pandoc",
+        "bash",
+        "sh"
+    ],
+    "operatingSystem": [
+        "macOS",
+        "Linux",
+        "Windows"
+    ],
+    "softwareRequirements": [
+        "Pandoc >= 3",
+        "GNU Make"
+    ],
+    "relatedLink": [
+        "https://codemeta.github.io/",
+        "https://codemeta.github.io/codemeta-generator/"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0003-0900-6903",
+            "givenName": "R. S.",
+            "familyName": "Doiel",
+            "email": "rsdoiel@caltech.edu",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Caltech Library"
+            }
+        }
+    ]
+}
