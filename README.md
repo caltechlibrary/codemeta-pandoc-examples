@@ -55,7 +55,7 @@ VERSION
 : This would be the version number without the leading "v", e.g. "0.0.1"
 
 OS_NAME
-: This would be what is reported by the command `uname`
+: would be "macOS", "Linux" or "Windows"
 
 MACHINE-TYPE
 : This would be what is reported by the command `uname -m`

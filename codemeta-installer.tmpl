@@ -5,7 +5,7 @@
 #
 PACKAGE="$name$"
 VERSION="$version$"
-RELEASE="https://github.com/caltechlibrary/$$PACKAGE/releases/tag/$$VERSION"
+RELEASE="https://github.com/caltechlibrary/$$PACKAGE/releases/tag/v$$VERSION"
 
 #
 # Get the name of this script.
@@ -22,10 +22,10 @@ case "$$OS_NAME" in
    OS_NAME="macOS"
    ;;
    "GNU/Linux")
-   OS_NAME="GNU_linux"
+   OS_NAME="Linux"
    ;;
 esac
-ZIPFILE="$$PACKAGE-$$VERSION-$$OS_NAME-$$MACHINE.zip"
+ZIPFILE="$$PACKAGE-v$$VERSION-$$OS_NAME-$$MACHINE.zip"
 
 #
 # Check to see if this zip file has been downloaded.
