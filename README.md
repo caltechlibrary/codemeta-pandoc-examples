@@ -39,16 +39,27 @@ use have installation instructions like
 With a single POSIX shell installer script you easily install your
 tools on macOS and Linux.
 
-Once again the [codemeta.json] file provides much of the information
-needed to render our **installer.sh**. Our template, [codemeta-installer.tmpl](codemeta-installer.tmpl) does make some specific assumptions
+The codemeta.json file provides much of what is needed to generate the
+installer script from [codemeta-installer.tmpl](codemeta-installer.tmpl).
+There are three addition Pandoc metadata variables needed not explicitly found in the codemeta.json. The installer script expects to use a Zip file as an q<F5>0Additionally you need to name the zip archive of the content to be installed needs to be predictably named.
+
+The z
+To have Pandoc generate a workable installer script requires to parts.
+First the name of your installation zip files need to be predictable. 
+
+Secondly the codemeta-installer.tmpl file needs to know some metadata inorder for the generated script to be runable.
+
+The [codemeta.json] file provides much of the information
+needed to render our **installer.sh**. Our template, 
+does make some specific assumptions
 
 - You've installation files are in a zip archive
 - There hosted under the GitHub in the releases directory for your repository
-- The name of the zip file is in the form of `<REPO-NAME>-v<VERSION>-<OS_NAME>-<ARCHITECTURE>.zip`
+- The name of the zip file is in the form of `<PACKAGE>-v<VERSION>-<OS_NAME>-<ARCHITECTURE>.zip`
 - The version number in the codemeta.json file does NOT have a leading 'v'
 - curl is available on the machine where you want to install the software and it has a network connection
 
-REPO-NAME
+PACKAGE
 : This would be the name of your Git repository, e.g. datatools
 
 VERSION

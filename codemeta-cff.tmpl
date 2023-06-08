@@ -15,6 +15,12 @@ ${for(maintainer)}
     given-names: ${it.givenName}
     orcid: "${it.at__id}"
 ${endfor}${endif}
+${if(contributor)}contributors:
+${for(contributor)}
+  - family-names: ${it.familyName}
+    given-names: ${it.givenName}
+    orcid: "${it.at__id}"
+${endfor}${endif}
 ${if(codeRepository)}repository-code: "${codeRepository}"${endif}
 ${if(version)}version: ${version}${endif}
 ${if(license)}license-url: "${license}"${endif}

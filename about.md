@@ -11,7 +11,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-0900-6903"
 
 repository-code: "git+https://github.com/caltechlibrary/codemeta-pandoc-examples"
-version: 0.0.1
+version: 0.0.3
 license-url: "https://caltechlibrary.github.io/codemeta-pandoc-examples/LICENSE"
 keywords: [ "codemeta", "pandoc", "templates" ]
 
@@ -20,7 +20,7 @@ keywords: [ "codemeta", "pandoc", "templates" ]
 About this software
 ===================
 
-## codemeta-pandoc-examples 0.0.1
+## codemeta-pandoc-examples 0.0.3
 
 ### Authors
 
@@ -42,8 +42,8 @@ installer.sh from a codemeta.json file using Pandoc.
 
 ### Operating Systems
 
-- macOS
 - Linux
+- macOS
 - Windows
 
 ### Software Requiremets

@@ -6,7 +6,7 @@
     "dateCreated": "2023-05-18",
     "issueTracker": "https://github.com/caltechlibrary/codemeta-pandoc-examples/issues",
     "name": "codemeta-pandoc-examples",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "This repository describes how to generate a CITATION.cff, about.md and installer.sh from a codemeta.json file using Pandoc.",
     "applicationCategory": "application installer",
     "developmentStatus": "concept",
@@ -23,8 +23,8 @@
         "pandoc templates"
     ],
     "operatingSystem": [
-        "macOS",
         "Linux",
+        "macOS",
         "Windows"
     ],
     "softwareRequirements": [
