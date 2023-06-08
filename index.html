@@ -51,23 +51,34 @@ use have installation instructions like</p>
 <pre class="shell"><code>    curl https://caltechlibrary.github.io/datatools/installer.sh | sh</code></pre>
 <p>With a single POSIX shell installer script you easily install your
 tools on macOS and Linux.</p>
-<p>Once again the [codemeta.json] file provides much of the information
-needed to render our <strong>installer.sh</strong>. Our template, <a
-href="codemeta-installer.tmpl">codemeta-installer.tmpl</a> does make
-some specific assumptions</p>
+<p>The codemeta.json file provides much of what is needed to generate
+the installer script from <a
+href="codemeta-installer.tmpl">codemeta-installer.tmpl</a>. There are
+three addition Pandoc metadata variables needed not explicitly found in
+the codemeta.json. The installer script expects to use a Zip file as an
+q<F5>0Additionally you need to name the zip archive of the content to be
+installed needs to be predictably named.</p>
+<p>The z To have Pandoc generate a workable installer script requires to
+parts. First the name of your installation zip files need to be
+predictable.</p>
+<p>Secondly the codemeta-installer.tmpl file needs to know some metadata
+inorder for the generated script to be runable.</p>
+<p>The [codemeta.json] file provides much of the information needed to
+render our <strong>installer.sh</strong>. Our template, does make some
+specific assumptions</p>
 <ul>
 <li>You’ve installation files are in a zip archive</li>
 <li>There hosted under the GitHub in the releases directory for your
 repository</li>
 <li>The name of the zip file is in the form of
-<code>&lt;REPO-NAME&gt;-v&lt;VERSION&gt;-&lt;OS_NAME&gt;-&lt;ARCHITECTURE&gt;.zip</code></li>
+<code>&lt;PACKAGE&gt;-v&lt;VERSION&gt;-&lt;OS_NAME&gt;-&lt;ARCHITECTURE&gt;.zip</code></li>
 <li>The version number in the codemeta.json file does NOT have a leading
 ‘v’</li>
 <li>curl is available on the machine where you want to install the
 software and it has a network connection</li>
 </ul>
 <dl>
-<dt>REPO-NAME</dt>
+<dt>PACKAGE</dt>
 <dd>
 This would be the name of your Git repository, e.g. datatools
 </dd>
