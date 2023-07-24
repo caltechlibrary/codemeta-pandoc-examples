@@ -44,6 +44,16 @@ href="codemeta-about.tmpl">codemeta-about.tmpl</a>.</p>
                         --metadata-file codemeta.json \
                         --template codemeta-about.tmpl \
                         &gt;about.md</code></pre>
+<h2 id="generating-version.sql">Generating version.sql</h2>
+<p>If you’re building a Postgres+PostgREST application it is nice to
+have an end point the shows the name and version of the web application
+you are building. This can be done with the <a
+href="codemeta-version-sql.tmpl">codemeta-version-sql.tmpl</a> Pandoc
+template.</p>
+<pre class="shell"><code>    echo &#39;&#39; | pandoc -s metadata title=&#39;Version Info&#39; \
+                     --metadata-file codemeta.json \
+                     --template codemete-version-sql.tmpl \
+                     &gt;version.sql</code></pre>
 <h2 id="generating-an-installer.sh">Generating an installer.sh</h2>
 <p>The nice thing about the Pandoc approach is you can also use it as a
 shell script generator. Today (2023) many software tools[1] developers
@@ -58,7 +68,7 @@ three addition Pandoc metadata variables needed not explicitly found in
 the codemeta.json. The installer script expects to use a Zip file as an
 q<F5>0Additionally you need to name the zip archive of the content to be
 installed needs to be predictably named.</p>
-<p>The z To have Pandoc generate a workable installer script requires to
+<p>To have Pandoc generate a workable installer script requires to
 parts. First the name of your installation zip files need to be
 predictable.</p>
 <p>Secondly the codemeta-installer.tmpl file needs to know some metadata

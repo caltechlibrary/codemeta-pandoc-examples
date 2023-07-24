@@ -26,6 +26,20 @@ Like [CITATION.cff](CITATION.cff) we can generate a standard about page,
                         >about.md
 ~~~
 
+## Generating version.sql
+
+If you're building a Postgres+PostgREST application it is nice to have
+an end point the shows the name and version of the web application you
+are building. This can be done with the [codemeta-version-sql.tmpl](codemeta-version-sql.tmpl) Pandoc template.
+
+~~~shell
+    echo '' | pandoc -s metadata title='Version Info' \
+                     --metadata-file codemeta.json \
+                     --template codemete-version-sql.tmpl \
+                     >version.sql
+~~~
+
+
 ## Generating an installer.sh
 
 The nice thing about the Pandoc approach is you can also use it as
@@ -43,7 +57,6 @@ The codemeta.json file provides much of what is needed to generate the
 installer script from [codemeta-installer.tmpl](codemeta-installer.tmpl).
 There are three addition Pandoc metadata variables needed not explicitly found in the codemeta.json. The installer script expects to use a Zip file as an q<F5>0Additionally you need to name the zip archive of the content to be installed needs to be predictably named.
 
-The z
 To have Pandoc generate a workable installer script requires to parts.
 First the name of your installation zip files need to be predictable. 
 
