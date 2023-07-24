@@ -4,7 +4,7 @@
 # Set the package name and version to install
 #
 PACKAGE="codemeta-pandoc-examples"
-VERSION="0.0.3"
+VERSION="0.0.4"
 GIT_GROUP=""
 RELEASE="https://github.com/$GIT_GROUP/$PACKAGE/releases/tag/v$VERSION"
 

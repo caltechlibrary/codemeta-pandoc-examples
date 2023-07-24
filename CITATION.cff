@@ -12,6 +12,6 @@ authors:
 
 
 repository-code: "git+https://github.com/caltechlibrary/codemeta-pandoc-examples"
-version: 0.0.3
+version: 0.0.4
 license-url: "https://caltechlibrary.github.io/codemeta-pandoc-examples/LICENSE"
 keywords: [ "codemeta", "pandoc", "templates" ]
