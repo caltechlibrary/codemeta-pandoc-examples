@@ -43,6 +43,9 @@ cat<<EOT
 
 EOT
 
+if [ ! -d "$$HOME/Downloads" ]; then
+	mkdir -p "$$HOME/Downloads"
+fi
 if [ ! -f "$$HOME/Downloads/$$ZIPFILE" ]; then
 	cat<<EOT
 
