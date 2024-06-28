@@ -1,0 +1,33 @@
+// $package$ version information
+
+// Version number of release
+const Version: string = "$version$"
+
+// ReleaseDate, the date version.go was generated
+const ReleaseDate: string = "$release_date$"
+
+// ReleaseHash, the Git hash when version.go was generated
+const ReleaseHash: string = "$release_hash$"
+
+const LicenseText: string = `
+$body$
+`
+)
+
+// fmtHelp lets you process a text block with simple curly brace markup.
+export function fmtHelp(src: string, appName: string, version: string, releaseDate: string, releaseHash: string): string {
+	const m: {app_name: string, version: string, release_date: string, release_hash: string} = {
+		"{app_name}": appName,
+		"{version}": version,
+		"{release_date}": releaseDate,
+		"{release_hash}": releaseHash
+	}
+	for (k in m) {
+		const v = m[k];
+		if src.contains(src, k) {
+			src = src.replaceAll(k, v)
+		}
+	}
+	return src
+}
+
