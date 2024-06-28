@@ -1,20 +1,25 @@
 // $package$ version information
+const appInfo: {[k: string]: string} = {
+	// appName holds the application name which corresponds to the package name.
+	appName: "$package$",
 
-// Version number of release
-const Version: string = "$version$"
+    // Version number of release
+    version: "$version$",
 
-// ReleaseDate, the date version.go was generated
-const ReleaseDate: string = "$release_date$"
+	// ReleaseDate, the date version.go was generated
+	releaseDate: "$release_date$",
 
-// ReleaseHash, the Git hash when version.go was generated
-const ReleaseHash: string = "$release_hash$"
+	// ReleaseHash, the Git hash when version.go was generated
+	releaseHash: "$release_hash$",
 
-const LicenseText: string = `
+    // licenseText holds a copy of the application license text.
+	licenseText: `
 $body$
 `
+}
 
 // fmtHelp lets you process a text block with simple curly brace markup.
-export function fmtHelp(src: string, appName: string, version: string, releaseDate: string, releaseHash: string): string {
+export function fmtHelp(src: string, appInfo: {[k: string]: string}): string {
   const terms: { [k: string]: string } = {
     app_name: appName,
     version: version,
