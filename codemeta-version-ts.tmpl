@@ -1,30 +1,45 @@
-// $package$ version information
+/**
+ * $package$ information
+ */
 export const appInfo: {[k: string]: string} = {
-	// appName holds the application name which corresponds to the package name.
-	appName: "$package$",
+  // appName holds the application/package name
+  appName: "$package$",
 
-    // Version number of release
-    version: "$version$",
+  // Version number of release
+  version: "$version$",
 
-	// ReleaseDate, the date version.go was generated
-	releaseDate: "$release_date$",
+  // ReleaseDate, the date version.ts was generated
+  releaseDate: "$release_date$",
 
-	// ReleaseHash, the Git hash when version.go was generated
-	releaseHash: "$release_hash$",
+  // ReleaseHash, the Git hash when version.go was generated
+  releaseHash: "$release_hash$",
 
-    // licenseText holds a copy of the application license text.
-	licenseText: `
+  // licenseText holds a copy of the application license text.
+  licenseText: `
 $body$
 `
 }
 
-// fmtHelp lets you process a text block with simple curly brace markup.
+/**
+ * fmtHelp lets you process a text block with simple curly brace markup.
+ * @param {src} src holds the help text to be processed with curly brace
+ * refernces for app_name, version, release_date, release_hash.
+ * @returns {string} returns the rendered help text.
+ *
+ * @example
+ * ```
+ *   import { appInfo, fmtHelp } from './version.ts';
+ *
+ *   const helpText = ` ... this is where you document your program in Pandoc manpage format `;
+ *   console.log(fmtHelp(helpText, appInfo));
+ * ```
+ */
 export function fmtHelp(src: string, appInfo: {[k: string]: string}): string {
   const terms: { [k: string]: string } = {
-    app_name: appName,
-    version: version,
-    release_date: releaseDate,
-    release_hash: releaseHash
+    app_name: appInfo.appName,
+    version: appInfo.version,
+    release_date: appInfo.releaseDate,
+    release_hash: appInfo.releaseHash
   };
   for (let key in terms) {
     const val: string = terms[key];
