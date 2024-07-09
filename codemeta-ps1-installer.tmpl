@@ -17,12 +17,7 @@ if ($$SYSTEM_TYPE.CsSystemType.Contains("x64")) {
 }
 
 # FIGURE OUT Install directory
-$$APP_INSTALL = $$env:$name$.ToUpper()
-$$BIN_DIR = if ($$APP_INSTALL) {
-  "$${APP_INSTALL}\bin"
-} else {
-  "$${Home}\\bin"
-}
+$$BIN_DIR = "$${Home}\\bin"
 
 #
 # Figure out what the zip file is named
