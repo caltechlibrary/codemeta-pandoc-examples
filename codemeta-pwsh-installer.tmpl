@@ -1,6 +1,5 @@
 #!/usr/bin/env pwsh
 # Generated with codemeta-pwsh-installer.tmpl, see https://github.com/caltechlibrary/codemeta-pandoc-examples
-# Copyright © 2024 Caltech Library.
 
 #
 # Set the package name and version to install
@@ -35,12 +34,12 @@ $$ZIPFILE = "$${PACKAGE}-v$${VERSION}-Windows-$${MACHINE}.zip"
 #
 $$DOWNLOAD_URL = "https://github.com/$${GIT_GROUP}/$${PACKAGE}/releases/download/v$${VERSION}/$${ZIPFILE}"
 
-if (!(Test-Path $BIN_DIR)) {
-  New-Item $BIN_DIR -ItemType Directory | Out-Null
+if (!(Test-Path $$BIN_DIR)) {
+  New-Item $$BIN_DIR -ItemType Directory | Out-Null
 }
 curl.exe -Lo "$${ZIPFILE}" "$${DOWNLOAD_URL}"
 
-tar.exe xf "$${ZIPFILE}"" -C $BIN_DIR
+tar.exe xf "$${ZIPFILE}"" -C $$BIN_DIR
 
 Remove-Item $$ZIPFILE
 
