@@ -27,6 +27,10 @@ case "$$OS_NAME" in
    ;;
 esac
 
+if [ "$$1" != "" ]; then
+   VERSION="$$1"
+fi
+
 ZIPFILE="$$PACKAGE-v$$VERSION-$$OS_NAME-$$MACHINE.zip"
 
 #

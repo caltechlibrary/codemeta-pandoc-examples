@@ -1,11 +1,14 @@
 #!/usr/bin/env pwsh
-# Generated with codemeta-pwsh-installer.tmpl, see https://github.com/caltechlibrary/codemeta-pandoc-examples
+# Generated with codemeta-ps1-installer.tmpl, see https://github.com/caltechlibrary/codemeta-pandoc-examples
 
 #
 # Set the package name and version to install
 #
+param(
+  [Parameter()]
+  [String]$$VERSION = "$version$"
+)
 $$PACKAGE = "$name$"
-$$VERSION = "$version$"
 $$GIT_GROUP = "$git_org_or_person$"
 $$RELEASE = "https://github.com/$${GIT_GROUP}/$${PACKAGE}/releases/tag/v$${VERSION}"
 $$SYSTEM_TYPE = Get-ComputerInfo -Property CsSystemType
@@ -14,6 +17,7 @@ if ($$SYSTEM_TYPE.CsSystemType.Contains("ARM64")) {
 } else {
     $$MACHINE = "x86_64"
 }
+
 
 # FIGURE OUT Install directory
 $$BIN_DIR = "$${Home}\bin"
