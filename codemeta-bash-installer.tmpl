@@ -29,6 +29,7 @@ esac
 
 if [ "$$1" != "" ]; then
    VERSION="$$1"
+   echo "Version set to v$${VERSION}"
 fi
 
 ZIPFILE="$$PACKAGE-v$$VERSION-$$OS_NAME-$$MACHINE.zip"
