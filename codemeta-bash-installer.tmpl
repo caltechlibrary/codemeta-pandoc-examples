@@ -4,6 +4,8 @@
 # Set the package name and version to install
 #
 PACKAGE="$name$"
+ENV_PREFIX="$name$"
+ENV_PREFIX="$${ENV_PREFIX^^}"
 VERSION="$version$"
 GIT_GROUP="$git_org_or_person$"
 RELEASE="https://github.com/$$GIT_GROUP/$$PACKAGE/releases/tag/v$$VERSION"
@@ -27,6 +29,10 @@ case "$$OS_NAME" in
    ;;
 esac
 
+if [ "$${ENV_PREFIX}}_VERSION" != "" ]; then
+   VERSION="$${ENV_PREFIX}_VERSION"
+   echo "$${ENV_PREFIX}_VERSION used for version v$${VERSION}"
+fi
 if [ "$$1" != "" ]; then
    VERSION="$$1"
    echo "Version set to v$${VERSION}"

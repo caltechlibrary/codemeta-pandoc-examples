@@ -9,6 +9,7 @@ param(
   [String]$$VERSION = "$version$"
 )
 $$PACKAGE = "$name$"
+$$ENV_PREFIX = "$name$".ToUpper()
 $$GIT_GROUP = "$git_org_or_person$"
 $$RELEASE = "https://github.com/$${GIT_GROUP}/$${PACKAGE}/releases/tag/v$${VERSION}"
 $$SYSTEM_TYPE = Get-ComputerInfo -Property CsSystemType
@@ -16,6 +17,13 @@ if ($$SYSTEM_TYPE.CsSystemType.Contains("ARM64")) {
     $$MACHINE = "arm64"
 } else {
     $$MACHINE = "x86_64"
+}
+
+# See if $${ENV_PREFIX}_VERSION was set in the environment and use that.
+$$PKG_VERSION = [Environment::GetEnvironmentVariable("${ENV_PREFIX}_VERSION")
+if ($$PKG_VERSION -neq "") {
+	$$VERSION = $$PKG_VERSION
+	Write-Output "Using $${PKG_VERSION} for version value $${VERSION}}"
 }
 
 
