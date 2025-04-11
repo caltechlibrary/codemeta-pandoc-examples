@@ -1,6 +1,8 @@
 
 # Codemeta + Pandoc Examples
 
+This has been replaced by [https://github.com/SciCodes/somef-core](https://github.com/caltechlibrary/CMTools)
+
 In this repository you see three examples of using Pandoc, Pandoc templates and codemeta.json to create an [about page](about.md), a [CITATION.cff](CITATION.cff) and an [installer.sh](https://caltechlibrary.github.io/irdmtools/installer.sh) file.
 
 ## Generating a CITATION.cff
